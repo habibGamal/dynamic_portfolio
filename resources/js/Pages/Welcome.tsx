@@ -8,6 +8,7 @@ interface Work {
     description: string;
     tags: { name: string; color: string }[];
     main_image: string;
+    main_image_url: string;
     source_code_link: string;
 }
 
