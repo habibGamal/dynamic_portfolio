@@ -30,10 +30,13 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
     return (
         <motion.div
             variants={fadeIn("up", "spring", 0.5 * index, 0.75)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.25 }}
         >
             <Tilt
                 options={{ max: 30, scale: 1, speed: 450 }}
-                className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full group cursor-pointer"
+                className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px] group cursor-pointer"
             >
                 <Link href={`/work/${project.id}`}>
                     <div className="relative w-full h-[230px]">
@@ -85,7 +88,7 @@ const Works = ({ works }: WorksProps) => {
                     projects.
                 </motion.p>
             </div>
-            <div className="mt-20 flex flex-wrap gap-5">
+            <div className="mt-20 flex flex-wrap gap-7 justify-center">
                 {works.map((project, index) => (
                     <ProjectCard
                         key={project.id}
