@@ -29,7 +29,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
     return (
         <motion.div
-            variants={fadeIn("up", "spring", 0.5 * index, 0.75)}
+            variants={fadeIn("up", "spring", 0.015 * index, 0.75)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
