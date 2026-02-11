@@ -160,6 +160,9 @@ class WorkForm
                                                         'Development Tools' => 'Development Tools',
                                                         'DevOps' => 'DevOps',
                                                         'Testing' => 'Testing',
+                                                        'Integrations' => 'Integrations',
+                                                        'Tools' => 'Tools',
+                                                        'Admin' => 'Admin',
                                                         'Other' => 'Other',
                                                     ])
                                                     ->native(false)
@@ -262,6 +265,7 @@ class WorkForm
                                                         'react-native' => 'React Native',
                                                         'nodejs' => 'Node.js',
                                                         'nextjs' => 'Next.js',
+                                                        'filament' => 'Filament',
                                                     ])
                                                     ->native(false)
                                                     ->columnSpan(1),
@@ -271,6 +275,8 @@ class WorkForm
                                                     ->datalist([
                                                         'text-red-500',
                                                         'text-blue-500',
+                                                        'text-blue-700',
+                                                        'text-green-400',
                                                         'text-green-500',
                                                         'text-yellow-500',
                                                         'text-purple-500',
