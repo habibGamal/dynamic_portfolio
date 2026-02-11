@@ -45,27 +45,17 @@ class WorkForm
                                             ->columnSpanFull()
                                             ->helperText('Detailed description of the project'),
 
-                                        Select::make('role')
+                                        TextInput::make('role')
                                             ->required()
-                                            ->searchable()
-                                            ->options([
-                                                'Fullstack Developer' => 'Fullstack Developer',
-                                                'Frontend Developer' => 'Frontend Developer',
-                                                'Backend Developer' => 'Backend Developer',
-                                                'Mobile Developer' => 'Mobile Developer',
-                                                'DevOps Engineer' => 'DevOps Engineer',
-                                                'UI/UX Designer' => 'UI/UX Designer',
-                                                'Project Manager' => 'Project Manager',
+                                            ->datalist([
+                                                'Fullstack Developer',
+                                                'Frontend Developer',
+                                                'Backend Developer',
+                                                'Mobile Developer',
+                                                'DevOps Engineer',
+                                                'UI/UX Designer',
+                                                'Project Manager',
                                             ])
-                                            ->native(false)
-                                            ->createOptionForm([
-                                                TextInput::make('custom_role')
-                                                    ->label('Custom Role')
-                                                    ->required(),
-                                            ])
-                                            ->createOptionUsing(function (array $data): string {
-                                                return $data['custom_role'];
-                                            })
                                             ->columnSpan(1),
 
                                         TextInput::make('duration')
@@ -276,35 +266,25 @@ class WorkForm
                                                     ->native(false)
                                                     ->columnSpan(1),
 
-                                                Select::make('color')
+                                                TextInput::make('color')
                                                     ->required()
-                                                    ->searchable()
-                                                    ->options([
-                                                        'text-red-500' => 'Red',
-                                                        'text-blue-500' => 'Blue',
-                                                        'text-green-500' => 'Green',
-                                                        'text-yellow-500' => 'Yellow',
-                                                        'text-purple-500' => 'Purple',
-                                                        'text-pink-500' => 'Pink',
-                                                        'text-indigo-500' => 'Indigo',
-                                                        'text-gray-500' => 'Gray',
-                                                        'text-orange-500' => 'Orange',
-                                                        'text-teal-500' => 'Teal',
-                                                        'text-cyan-500' => 'Cyan',
-                                                        'text-lime-500' => 'Lime',
-                                                        'text-sky-500' => 'Sky',
-                                                        'pink-text-gradient' => 'Pink Gradient',
+                                                    ->datalist([
+                                                        'text-red-500',
+                                                        'text-blue-500',
+                                                        'text-green-500',
+                                                        'text-yellow-500',
+                                                        'text-purple-500',
+                                                        'text-pink-500',
+                                                        'text-indigo-500',
+                                                        'text-gray-500',
+                                                        'text-orange-500',
+                                                        'text-teal-500',
+                                                        'text-cyan-500',
+                                                        'text-lime-500',
+                                                        'text-sky-500',
+                                                        'pink-text-gradient',
                                                     ])
-                                                    ->native(false)
-                                                    ->createOptionForm([
-                                                        TextInput::make('custom_color')
-                                                            ->label('Custom Color Class')
-                                                            ->required()
-                                                            ->placeholder('e.g., text-amber-500'),
-                                                    ])
-                                                    ->createOptionUsing(function (array $data): string {
-                                                        return $data['custom_color'];
-                                                    })
+                                                    ->placeholder('e.g., text-amber-500')
                                                     ->columnSpan(1),
                                             ])
                                             ->columns(2)
