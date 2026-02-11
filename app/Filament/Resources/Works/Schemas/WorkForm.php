@@ -58,6 +58,14 @@ class WorkForm
                                                 'Project Manager' => 'Project Manager',
                                             ])
                                             ->native(false)
+                                            ->createOptionForm([
+                                                TextInput::make('custom_role')
+                                                    ->label('Custom Role')
+                                                    ->required(),
+                                            ])
+                                            ->createOptionUsing(function (array $data): string {
+                                                return $data['custom_role'];
+                                            })
                                             ->columnSpan(1),
 
                                         TextInput::make('duration')
@@ -130,7 +138,7 @@ class WorkForm
                                                     ->label('Challenge Description'),
 
                                                 Textarea::make('decision')
-                                                    ->required()
+                                                    // ->required()
                                                     ->rows(3)
                                                     ->columnSpanFull()
                                                     ->label('Solution/Decision Made'),
@@ -288,6 +296,15 @@ class WorkForm
                                                         'pink-text-gradient' => 'Pink Gradient',
                                                     ])
                                                     ->native(false)
+                                                    ->createOptionForm([
+                                                        TextInput::make('custom_color')
+                                                            ->label('Custom Color Class')
+                                                            ->required()
+                                                            ->placeholder('e.g., text-amber-500'),
+                                                    ])
+                                                    ->createOptionUsing(function (array $data): string {
+                                                        return $data['custom_color'];
+                                                    })
                                                     ->columnSpan(1),
                                             ])
                                             ->columns(2)
