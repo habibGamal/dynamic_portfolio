@@ -25,7 +25,7 @@ const Navbar = () => {
                         className="w-9 h-9 object-contain"
                         alt="logo"
                     />
-                    <p className="text-lg font-medium">HG Programming Studio</p>
+                    <p className="text-lg font-medium">Eng. Habib</p>
                 </Link>
                 <ul className="list-none hidden sm:flex flex-row gap-10">
                     {navLinks.map((link, index) => (
